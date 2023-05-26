@@ -1,0 +1,31 @@
+User Registration
+---
+tags:
+  - Authentication
+parameters:
+  - name: body
+    description: The body should contain the user registration data
+    in: body
+    required: true
+    schema:
+      type: object
+      required:
+        - "username"
+        - "password"
+      properties:
+        username:
+          type: "string"
+          example: "username"
+        password:
+          type: "string"
+          format: password
+          example: "Password1"
+responses:
+  201:
+    description: When a user successfully create an account
+
+  400:
+    description: Fails to register due to bad request data
+
+  409:
+    description: When an user register with a duplicate username
